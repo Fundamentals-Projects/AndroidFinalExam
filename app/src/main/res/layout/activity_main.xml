@@ -50,6 +50,21 @@
         app:layout_constraintTop_toBottomOf="@+id/imageCountry" />
 
     <TextView
+        android:id="@+id/txtCapital4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Place to Visit:"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/txtCapital"
+        app:layout_constraintStart_toStartOf="@+id/txtCapital"
+        app:layout_constraintTop_toBottomOf="@+id/txtCapital" />
+
+    <TextView
         android:id="@+id/txtNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -92,11 +107,11 @@
     <ListView
         android:id="@+id/lvPoi"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/txtCapital"
-        app:layout_constraintStart_toStartOf="@+id/txtCapital"
-        app:layout_constraintTop_toBottomOf="@+id/txtCapital" />
+        android:layout_height="160dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtCapital4"
+        app:layout_constraintStart_toStartOf="@+id/txtCapital4"
+        app:layout_constraintTop_toBottomOf="@+id/txtCapital4" />
 
     <EditText
         android:id="@+id/txtNumberOfvisit"

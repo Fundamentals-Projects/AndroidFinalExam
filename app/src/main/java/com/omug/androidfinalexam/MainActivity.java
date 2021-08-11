@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(txtNumberOfvisit.getText().toString().isEmpty()){
                     Toast.makeText(getBaseContext(),"Indicate number of visitors",Toast.LENGTH_LONG).show();
+                }else if(txtSelectedPlace.getText().toString().isEmpty()){
+                    Toast.makeText(getBaseContext(),"Select a Place to Visit",Toast.LENGTH_LONG).show();
                 }else{
                     int qty = Integer.parseInt(txtNumberOfvisit.getText().toString());
                     totalamount.setText("Total Amount::  $"+ String.valueOf(calculateAmount(places.get(index).getAmount(), qty)));
