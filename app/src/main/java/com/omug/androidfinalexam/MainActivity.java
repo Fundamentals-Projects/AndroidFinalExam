@@ -20,7 +20,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     Button calculate;
     Spinner spCountry;
-    TextView totalamount, capital, discount, txtNumberOfvisit;
+    TextView totalamount, capital, discount, txtNumberOfvisit, txtSelectedPlace;
     ImageView imageCountry;
     ListView placesOfVisit;
     public static int index;
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         placesOfVisit = findViewById(R.id.lvPoi);
         calculate = findViewById(R.id.btnCalculate);
         txtNumberOfvisit = findViewById(R.id.txtNumberOfvisit);
+        txtSelectedPlace = findViewById(R.id.txtSelectedPlace);
 
         fillCountries();
 
@@ -55,8 +56,13 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(getBaseContext(),"Indicate number of visitors",Toast.LENGTH_LONG).show();
                 }else{
                     int qty = Integer.parseInt(txtNumberOfvisit.getText().toString());
-
                     totalamount.setText("Total Amount::  $"+ String.valueOf(calculateAmount(places.get(index).getAmount(), qty)));
+
+                    if(qty>15){
+                        discount.setText("Discounts Applied 5%");
+                    }else{
+                        discount.setText("");
+                    }
                 }
             }
         });
@@ -67,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         double total = 0;
 
         if (qty > 15){
-            total = (amount * qty) - (total * 0.05);
+            total = amount * qty - ((amount * qty) * 0.05);
         }else{
             total = amount * qty;
         }
@@ -110,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
     private class SpinnersEvents implements android.widget.AdapterView.OnItemSelectedListener {
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            txtSelectedPlace.setText("");
             places = countries.get(position).getPoi();
             capital.setText("Capital:  "+String.valueOf(countries.get(position).getCapital()));
             imageCountry.setImageResource(countries.get(position).getImgCountry());
@@ -119,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     index=position;
+                    txtSelectedPlace.setText("Selected Place: "+places.get(position).getPlace().toString());
                 }
             });
         }

@@ -53,16 +53,16 @@
         android:id="@+id/txtNumber"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Number of Visitors:"
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/purple_700"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/lvPoi"
-        app:layout_constraintStart_toStartOf="@+id/lvPoi"
-        app:layout_constraintTop_toBottomOf="@+id/lvPoi" />
+        app:layout_constraintEnd_toEndOf="@+id/txtSelectedPlace"
+        app:layout_constraintStart_toStartOf="@+id/txtSelectedPlace"
+        app:layout_constraintTop_toBottomOf="@+id/txtSelectedPlace" />
 
     <TextView
         android:id="@+id/txtTotalAmount"
@@ -127,5 +127,15 @@
         app:layout_constraintEnd_toEndOf="@+id/txtTotalAmount"
         app:layout_constraintStart_toStartOf="@+id/txtTotalAmount"
         app:layout_constraintTop_toBottomOf="@+id/txtTotalAmount" />
+
+    <TextView
+        android:id="@+id/txtSelectedPlace"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="@+id/lvPoi"
+        app:layout_constraintStart_toStartOf="@+id/lvPoi"
+        app:layout_constraintTop_toBottomOf="@+id/lvPoi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

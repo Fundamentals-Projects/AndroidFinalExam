@@ -30,19 +30,19 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
                     String user = username.getText().toString();
                     String pass = password.getText().toString();
-                    //if(validLogin(user,pass)){
+                    if(validLogin(user,pass)){
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);
-                    //}else{
-                    //    Toast.makeText(getBaseContext(),"Invalid username or password",Toast.LENGTH_LONG).show();
-                    //}
+                    }else{
+                        Toast.makeText(getBaseContext(),"Invalid username or password",Toast.LENGTH_LONG).show();
+                    }
                 }
             }
         });
     }
 
     private boolean validLogin(String user, String pass) {
-        if(user=="omairys" && pass =="123456"){
+        if(user.equalsIgnoreCase("user1") && pass.equalsIgnoreCase("password1")){
             return true;
         }
         return false;
