@@ -6,13 +6,126 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Spinner
+        android:id="@+id/spCountries"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtCountry"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtCountry"
+        app:layout_constraintTop_toBottomOf="@+id/txtCountry" />
+
+    <TextView
+        android:id="@+id/txtCountry"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Country:"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCapital"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Capital:"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageCountry"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageCountry"
+        app:layout_constraintTop_toBottomOf="@+id/imageCountry" />
+
+    <TextView
+        android:id="@+id/txtNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Number of Visitors:"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/lvPoi"
+        app:layout_constraintStart_toStartOf="@+id/lvPoi"
+        app:layout_constraintTop_toBottomOf="@+id/lvPoi" />
+
+    <TextView
+        android:id="@+id/txtTotalAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Total Amount:"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@color/purple_700"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/btnCalculate"
+        app:layout_constraintStart_toStartOf="@+id/btnCalculate"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalculate" />
+
+    <ImageView
+        android:id="@+id/imageCountry"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/spCountries"
+        app:layout_constraintStart_toStartOf="@+id/spCountries"
+        app:layout_constraintTop_toBottomOf="@+id/spCountries"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ListView
+        android:id="@+id/lvPoi"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtCapital"
+        app:layout_constraintStart_toStartOf="@+id/txtCapital"
+        app:layout_constraintTop_toBottomOf="@+id/txtCapital" />
+
+    <EditText
+        android:id="@+id/txtNumberOfvisit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/txtNumber"
+        app:layout_constraintStart_toStartOf="@+id/txtNumber"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumber" />
+
+    <Button
+        android:id="@+id/btnCalculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Calculate"
+        app:layout_constraintEnd_toEndOf="@+id/txtNumberOfvisit"
+        app:layout_constraintStart_toStartOf="@+id/txtNumberOfvisit"
+        app:layout_constraintTop_toBottomOf="@+id/txtNumberOfvisit" />
+
+    <TextView
+        android:id="@+id/txtDiscountsApplied"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtTotalAmount"
+        app:layout_constraintStart_toStartOf="@+id/txtTotalAmount"
+        app:layout_constraintTop_toBottomOf="@+id/txtTotalAmount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
